@@ -7,7 +7,7 @@ We need a few packages installed globally for testing.
 sudo pip install coverage nose
 ```
 
-## Usage
+Then we need to set up the environment ready to run.
 ```bash
 virtualenv env
 source ./env/bin/activate
