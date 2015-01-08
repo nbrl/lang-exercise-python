@@ -35,7 +35,7 @@ curl http://127.0.0.1:8888/in/ -d 'your message'
 
 To query a message by id:
 ```bash
-curl http://127.0.0.1:8888/messages/<int:id>
+curl http://127.0.0.1:8888/messages/<int:id>/
 ```
 
 ## Saving new dependencies
