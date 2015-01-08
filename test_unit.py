@@ -34,6 +34,7 @@ class LangAppPostMessage(unittest.TestCase):
 
   @mock.patch('langapp.red.hset')
   def test_new_message_added_to_hash(self, redis_hset):
+    langapp.red.incr.return_value = 1
     self.app.post('/in/', data='some data')
     redis_hset.assert_called_once_with('messages', 1, 'some data')
 
