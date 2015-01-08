@@ -17,7 +17,7 @@ def getMessage(mid):
   return 'no such message', 404
 
 # Routing functions
-# Input root - data is posted and we save it
+# Input route - data is posted and we save it
 @app.route("/in/", methods=['POST'])
 def inRoute():
   if request.data:
