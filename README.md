@@ -41,7 +41,7 @@ curl http://127.0.0.1:8888/messages/<int:id>/
 ## Testing the app
 To run all the tests:
 ```bash
-nosetests test
+nosetests -sv
 ```
 
 ## Saving new dependencies

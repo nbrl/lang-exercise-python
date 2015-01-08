@@ -32,10 +32,10 @@ class LangAppPostMessage(unittest.TestCase):
     self.app.post('/in/', data='doesnt matter')
     redis_incr.assert_called_once_with('messageid')
 
-  #@mock.patch('langapp.red.hset')
-  #def test_new_message_added_to_hash(self, redis_hset):
-  #  self.app.post('/in/', data='some data')
-  #  redis_hset.assert_called_once_with('messages', 1, 'some data')
+  @mock.patch('langapp.red.hset')
+  def test_new_message_added_to_hash(self, redis_hset):
+    self.app.post('/in/', data='some data')
+    redis_hset.assert_called_once_with('messages', 1, 'some data')
 
 if __name__ == '__main__':
   unittest.main(verbosity = 2)
