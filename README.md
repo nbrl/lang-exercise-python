@@ -38,6 +38,12 @@ To query a message by id:
 curl http://127.0.0.1:8888/messages/<int:id>/
 ```
 
+## Testing the app
+To run all the tests:
+```bash
+nosetests test
+```
+
 ## Saving new dependencies
 If the dependencies for the project change, update the requirements.
 ```bash
