@@ -20,11 +20,9 @@ def getMessage(mid):
 # Input route - data is posted and we save it
 @app.route("/in/", methods=['POST'])
 def inRoute():
-  if request.data:
-    return saveMessage(request.data)
-
-  if request.form.keys():
-    return saveMessage(request.form.keys().pop(0))
+  message = request.data if request.data else request.form.keys().pop()
+  if message:
+    return saveMessage(message)
 
   return 'No data received', 400
 
