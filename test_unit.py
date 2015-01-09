@@ -44,6 +44,11 @@ class LangAppPostMessage(unittest.TestCase):
     self.app.post('/in/', data='some%20data', headers={'content-type':'application/x-www-form-urlencoded'})
     redis_hset.assert_called_once_with('messages', 1, 'some data')
 
+  def test_no_data_sent_to_be_saved(self):
+    rv = self.app.post('/in/', data=None)
+    self.assertEqual(rv.status_code, 400)
+    self.assertEqual(rv.data, 'No data received')
+
 
 class LangAppGetMessage(unittest.TestCase):
   def setUp(self):
